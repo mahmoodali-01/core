@@ -65,6 +65,7 @@ class BehaviourGateway extends QueryableGateway implements ScrubbableGateway
                 'gibbonBehaviour.date',
                 'gibbonBehaviour.timestamp',
                 'gibbonBehaviour.comment',
+                'gibbonBehaviour.detentionDate',
                 'student.gibbonPersonID',
                 'student.surname',
                 'student.preferredName',
