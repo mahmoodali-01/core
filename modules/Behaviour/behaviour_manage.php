@@ -206,6 +206,17 @@ if (isActionAccessible($guid, $connection2, '/modules/Behaviour/behaviour_manage
                 return Format::name($person['titleCreator'], $person['preferredNameCreator'], $person['surnameCreator'], 'Staff');
             });
 
+        $table->addColumn('detentionDate', __('Detention Date'))
+			->context('primary')
+			->format(function($behaviour) {
+        if (!empty($behaviour['detentionDate'])) {
+            // Assuming Format::date() can handle the format, or you ensure the format is compatible
+            return Format::date($behaviour['detentionDate']);
+        } else {
+            // If detentionDate is null, empty, or somehow improperly formatted
+            return 'No Date';
+        }
+		});
         $table->addActionColumn()
             ->addParam('gibbonPersonID', $gibbonPersonID)
             ->addParam('gibbonFormGroupID', $gibbonFormGroupID)
