@@ -141,7 +141,12 @@ if (isActionAccessible($guid, $connection2, '/modules/Behaviour/behaviour_manage
                 	$row->addLabel('level', __('Level'));
                 	$row->addSelect('level')->fromArray($optionsLevels)->placeholder();
             }
-
+            
+            // Detention Date
+            $row = $form->addRow();
+                $row->addLabel('detentionDate', __('Detention Date'));
+                $row->addDate('detentionDate');
+                
             $form->addRow()->addHeading('Details', __('Details'));
 
 			//Incident
